@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 가이드</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/basic_guide.css">
+
+    <script src="lib/jquery-3.7.0.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        $(function () {
+            let depth01 = $('header .inner nav .gnb .depth01');
+
+            // header 2차메뉴
+            depth01.mouseenter(function () {
+                depth01.removeClass('on');
+                $(this).addClass('on');
+            })
+
+            depth01.mouseleave(function () {
+                depth01.removeClass('on');
+            })
+
+
+            // 메인메뉴 nav에 따라 아이템 변경
+            let tagMenu = $('.cont01 .inner nav .tag_menu li');
+
+            let list = $('.cont01 .inner > .list');
+
+            let item = $('.cont01 .inner .list .item');
+            let tool = $('.cont01 .inner .list .tool');
+            let ingredient = $('.cont01 .inner .list .ingredient');
+            let prep = $('.cont01 .inner .list .prep');
+            let tip = $('.cont01 .inner .list .tip');
+
+            tagMenu.click(function () {
+                tagMenu.removeClass('on');
+                $(this).addClass('on');
+
+                if ($(this).hasClass('all_item') == true) {
+                    item.addClass('on');
+
+                } else if ($(this).hasClass('tool') == true) {
+                    item.removeClass('on');
+                    tool.addClass('on');
+
+                } else if ($(this).hasClass('ingredient') == true) {
+                    item.removeClass('on');
+                    ingredient.addClass('on');
+
+                } else if ($(this).hasClass('prep') == true) {
+                    item.removeClass('on');
+                    prep.addClass('on');
+
+                } else if ($(this).hasClass('tip') == true) {
+                    item.removeClass('on');
+                    tip.addClass('on');
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <div class="inner">
+                <nav>
+                    <ul class="gnb">
+                        <li class="depth01">
+                            <a href="#">베이킹 가이드</a>
+                            <ul class="depth02">
+                                <li>
+                                    <a href="#">
+                                        필요한 도구
+                                        <img src="img/header/gnb_arrow.png" alt="화살표">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        필요한 재료
+                                        <img src="img/header/gnb_arrow.png" alt="화살표">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        계량하는 법
+                                        <img src="img/header/gnb_arrow.png" alt="화살표">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        케이크용 도구 및 재료
+                                        <img src="img/header/gnb_arrow.png" alt="화살표">
+                                    </a>
+                                </li>
+                            </ul> <!-- depth02 end -->
+                        </li> <!-- depth01 end -->
+
+                        <li class="depth01">
+                            <a href="#">레시피</a>
+                            <ul class="depth02">
+                                <li>
+                                    <a href="#">
+                                        쿠키 레시피
+                                        <img src="img/header/gnb_arrow.png" alt="화살표">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        케이크 레시피
+                                        <img src="img/header/gnb_arrow.png" alt="화살표">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        발효빵 레시피
+                                        <img src="img/header/gnb_arrow.png" alt="화살표">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        초콜릿 레시피
+                                        <img src="img/header/gnb_arrow.png" alt="화살표">
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        기타 레시피
+                                        <img src="img/header/gnb_arrow.png" alt="화살표">
+                                    </a>
+                                </li>
+                            </ul> <!-- depth02 end -->
+                        </li> <!-- depth01 end -->
+
+                        <li class="store">
+                            <a href="https://ehomebakery.com/">스토어</a>
+                        </li> <!-- store end -->
+                    </ul> <!-- gnb end -->
+                </nav>
+
+                <h1>
+                    <a href="index.html">
+                        <img src="img/header/logo_bg.png" alt="로고">
+                    </a>
+                </h1>
+
+                <div class="search_box">
+                    <input type="text" placeholder="검색어를 입력해주세요">
+                    <button>
+                        <img src="img/header/search.png" alt="검색">
+                    </button>
+                </div> <!-- search_box end -->
+            </div> <!-- inner end -->
+        </header>
+
+        <main>
+            <section class="cont01">
+                <div class="title">
+                    <div class="bg">
+                        <div class="title_text">
+                            <h2>BASIC GUIDE</h2>
+                            <p>제과제빵을 처음 시작하시는 분들을 위해</p>
+                        </div>
+                    </div> <!-- bg end -->
+                </div> <!-- title end -->
+
+                <div class="inner">
+                    <nav>
+                        <ul class="tag_menu">
+                            <li class="all_item on">
+                                <a href="#" onclick="return false">
+                                    전체보기
+                                </a>
+                            </li> <!-- all_item end -->
+
+                            <li class="tool">
+                                <a href="#" onclick="return false">
+                                    베이킹 도구
+                                </a>
+                            </li> <!-- tool end -->
+
+                            <li class="ingredient">
+                                <a href="#" onclick="return false">
+                                    베이킹 재료
+                                </a>
+                            </li> <!-- ingredient end -->
+
+                            <li class="prep">
+                                <a href="#" onclick="return false">
+                                    재료 다루는 법
+                                </a>
+                            </li> <!-- prep end -->
+
+                            <li class="tip">
+                                <a href="#" onclick="return false">
+                                    그 외 관련 팁
+                                </a>
+                            </li> <!-- tip end -->
+                        </ul> <!-- tag_menu end -->
+                    </nav>
+
+                    <div class="list">
+                        <div class="item tool on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>111</p>
+                                <h4>111</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <div class="item tool on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>211</p>
+                                <h4>111</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <div class="item tool on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>311</p>
+                                <h4>111</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <div class="item tool on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>411</p>
+                                <h4>111</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <!-- --------------------------------------------------------------------------------------------- -->
+                        <!-- ingredient -->
+
+                        <div class="item ingredient on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>222</p>
+                                <h4>222</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <div class="item ingredient on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>222</p>
+                                <h4>222</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <div class="item ingredient on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>222</p>
+                                <h4>222</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <div class="item ingredient on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>222</p>
+                                <h4>222</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+
+                        <!-- --------------------------------------------------------------------------------------------- -->
+                        <!-- prep -->
+
+                        <div class="item prep on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>333</p>
+                                <h4>333</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <div class="item prep on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>333</p>
+                                <h4>333</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <div class="item prep on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>333</p>
+                                <h4>333</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <div class="item prep on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>333</p>
+                                <h4>333</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <!-- --------------------------------------------------------------------------------------------- -->
+                        <!-- tip -->
+
+                        <div class="item tip on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>444</p>
+                                <h4>444</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <div class="item tip on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>444</p>
+                                <h4>444</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <div class="item tip on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>444</p>
+                                <h4>444</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+
+                        <div class="item tip on">
+                            <figure>
+                                <img src="" alt="">
+                            </figure>
+
+                            <div class="text">
+                                <p>444</p>
+                                <h4>444</h4>
+                            </div> <!-- text end -->
+                        </div> <!-- item end -->
+                    </div> <!-- list end -->
+                </div> <!-- inner end -->
+            </section>
+        </main>
+
+        <footer>
+            <div class="legal">
+                <div class="legal_inner">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">이용안내</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">오시는길</a></li>
+                        <li><a href="#">사업자정보확인</a></li>
+                    </ul>
+                </div> <!-- legal_inner end -->
+            </div> <!-- legal end -->
+
+            <div class="info">
+                <div class="info_inner">
+                    <div class="text">
+                        <h2>회사 정보</h2>
+                        <p>회사명 : e홈베이커리 / 대표 : 송호섭<br />
+                            사업자번호 : 122-08-25947 / 통신판매번호 : 계양구청 제2004-00010호<br />
+                            주소 : 인천광역시 계양구 계양문화로 59번길 13 월드텔 2층<br />
+                            E-mail : ehomebakery@naver.com / Fax : 032-549-6922</p>
+                    </div> <!-- text end -->
+
+                    <div class="text">
+                        <h2>고객센터</h2>
+                        <p>고객센터 : 032-549-6923<br />
+                            평일 : 09:30 ~ 17:00<br />
+                            토요일 : 09:30 ~ 14:00<br />
+                            일요일, 공휴일 휴무</p>
+                    </div> <!-- text end -->
+
+                    <div class="text">
+                        <h2>무통장입금 안내</h2>
+                        <p>우리 1002-734-860772 / 국민 720501-01-317435<br />
+                            신한 110-475-558829 / 하나 407-910029-25304<br />
+                            농협 546-02-252291<br />
+                            예금주 : 송호섭(e베이커리)</p>
+                    </div> <!-- text end -->
+
+                    <div class="text">
+                        <h2>배송안내</h2>
+                        <p>토요일 택배 출고 및 배송됩니다.<br />
+                            주문/결제 마감은 오후 4시까지 (토요일은 오후 1시 마감)<br />
+                            배송기간 : 출고후 1~3일 소요<br />
+                            배송료 : 3,000원 (4만원 이상 무료배송) </p>
+                    </div> <!-- text end -->
+                </div> <!-- info_inner end -->
+            </div> <!-- info end -->
+        </footer>
+    </div> <!-- #wrap end -->
+</body>
+
+</html>
